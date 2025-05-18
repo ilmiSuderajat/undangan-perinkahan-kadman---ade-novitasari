@@ -611,7 +611,7 @@ button img {
 }
 .akadbg::before {
   content: "";
-  background-image: url(img/foto7.jpg);
+  background-image: url(img/foto7.JPG);
   position: absolute;
   background-size: cover;
   background-position: center;
@@ -656,7 +656,7 @@ button img {
   }
   .akad2::before {
     content: "";
-    background-image: url(img/foto5.jpg);
+    background-image: url(img/foto5.JPG);
     position: absolute;
     background-size: cover;
     background-position: center;
