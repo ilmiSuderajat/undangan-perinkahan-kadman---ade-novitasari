@@ -1,0 +1,969 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.slideshow {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+  filter: brightness(70%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+
+.slideshow.active {
+  opacity: 1;
+}
+.hero {
+  height: 100vh; /* Bikin elemen setinggi viewport */
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+  color: #e7e7e7;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(90px); /* Mulai dari bawah */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Kembali ke posisi normal */
+  }
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  margin-top: -20%;
+  animation: slideUp 2s ease-out forwards;
+}
+
+
+.hero .yth .nama {
+  text-transform: capitalize;
+  padding: 10px auto;
+  filter: none;
+  color: gold;
+  font-size: 1.5em;
+  font-family: "Crete Round", serif;
+  margin-top: -10%;
+}
+.hero p {
+
+  font-family: "Crete Round", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  filter: none;
+  margin-top: -20px;
+  
+}
+.hero h1 {
+  font-family: "Sacramento", cursive;
+  font-size: 3em;
+  
+}
+
+.hero .yth p {
+  font-size: 1em;
+  padding: 12px;
+}
+.yth {
+  margin-top: 130%;
+}
+.hero button {
+  width: 150px;
+  height: 30px;
+  display: block;
+  text-align: center;
+  border-radius: 90px;
+  border: none;
+  margin: 20px auto;
+}
+
+button:hover{
+  background-color: black;
+  color: white;
+  font-family: "Crete Round", serif;
+  
+}
+
+button img {
+  width: 20px;
+  display: flex;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  margin-left:8px; ;
+  
+}
+
+#true {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: -10%;
+  margin-bottom: -70%;
+}
+
+.slideshow-true {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 5s ease-in-out;
+  filter: brightness(70%);
+}
+
+.slideshow-true.active {
+  opacity: 1;
+}
+
+.weding {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.weding.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.weding p {
+  font-family: "Crete Round", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2em;
+  filter: none;
+  color: white;
+  margin-top: -250%;
+}
+
+.weding h1 {
+
+  font-family: "Sacramento", cursive;
+  font-size: 2.5em;
+  color: white;
+
+}
+
+.trulove {
+
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: grey;
+}
+
+#love {
+ 
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+#love::before{
+
+  content: "";
+  background-image: url(img/tes.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  min-height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  filter: brightness(80%);
+
+}
+
+.bg {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: white;
+  filter: none;
+  
+}
+
+/* Add these new styles for the scroll animation */
+.bg p, .bg h1, .bgimg {
+  transition: transform 0.5s ease-out;
+  will-change: transform;
+}
+
+/* Animation classes that will be added via JavaScript */
+.slide-up {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.slide-up.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Your existing styles */
+.bg p {
+  margin-top: 25px;
+  font-size: 2em;
+}
+
+.bg h1 {
+  font-size: 2em;
+  font-family: "Crete Round", serif;
+  font-weight: 100;
+}
+
+.bgimg {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas: "right";
+}
+.lovetext1 {
+  width: 90%;
+  height: 100%;
+  margin: 10px auto;
+  border-radius: 5%;
+  border: 2px solid white;
+  background-image: url(img/foto1.jpg);
+  background-position: center;
+  background-size: cover;
+  box-shadow: 2px 2px 2px rgb(70, 69, 69);
+  filter: brightness(80%);
+
+  /* Sembunyikan sebelum scroll */
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease-out;
+  pointer-events: none;
+}
+
+.lovetext1.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.lovetext {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font-family: "Crete Round", serif;
+  font-weight: 100;
+  margin-top: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg .lovetext h3 {
+  font-family: "Crete Round", serif;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: bolder;
+}
+
+
+
+.bgimg p {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  text-align: center;
+  margin-top: -90%;
+  font-weight: 300;
+}
+
+
+#merid {
+
+
+  width: 100%;
+  height: 105vh;
+  display: grid;
+  background-color: #FFF5E1;
+  filter: brightness(87%);
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 2fr 2fr;
+  grid-template-areas: "header header";
+  gap: 5%;
+  
+}
+.colom {
+  width: 100%;
+  height: 40%;
+  grid-area: header;
+  margin-bottom: 20%;
+  
+}
+
+.colom h1 {
+  text-align: center;
+  margin-top: 20%;
+}
+
+.item {
+  
+  width: 100%;
+  height: 80%;
+  
+  
+  
+}
+.wadon {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  margin-top: -70px;
+  
+}
+.wadon img {
+  width: 90%;
+  height: 120%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid salmon;
+  margin-top: 70px;
+  margin-left: auto;
+}
+.tekswadon {
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: -60%;
+}
+.tekswadon h1 {
+  font-family: "Crete Round", serif;
+  font-weight: 100;
+  font-size: 2em;
+  margin: 10px auto;
+}
+.tekswadon .bpk {
+
+  font-family: "Crete Round", serif;
+  font-weight: bold;
+}
+#merid .item .tekswadon p {
+  font-family: "Crete Round", serif;
+  font-weight: 0;
+  
+}
+.tekswadon .ig {
+  margin: auto;
+  padding: 5px;
+  width: auto;
+  height: auto;
+  background-color: rgb(39, 39, 39);
+  border-radius: 8px;
+}
+
+.ig a {
+  color: white;
+  text-decoration: none;
+}
+
+.lanang {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  margin-top: -20%;
+  
+}
+
+.lanang img {
+
+  
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid salmon;
+  margin-right: 10px;
+  margin-top: 50%;
+  
+}
+
+.tekslanang {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: -70px;
+}
+
+.tekslanang h1 {
+
+  font-family: "Crete Round", serif;
+  font-weight: 100;
+  font-size: 2em;
+  margin: 10px auto;
+}
+
+.tekslanang .bpk {
+
+  font-family: "Crete Round", serif;
+  font-weight: bold;
+}
+
+.tekslanang p {
+
+  font-family: "Crete Round", serif;
+  font-weight: 0;
+}
+
+.tekslanang .ig2 {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: auto;
+  padding: 5px;
+  border-radius: 8px;
+  height: auto;
+  text-align: center;
+  background-color: rgb(39, 39, 39);
+}
+
+.ig2 a {
+  color: white;
+  text-decoration: none;
+}
+
+#date {
+
+  width: 100%;
+  height: 500px;
+  background-color: #75b996;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "back back";
+  opacity: 2px;
+  
+  
+}
+
+.count {
+  grid-area: back;
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  filter: brightness(99%);
+  border-radius: 15% ;
+  box-sizing: border-box;
+  box-shadow: 2px 5px 5px rgb(61, 60, 59);
+}
+.count h1 {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 1.5em;
+  color: rgb(216, 117, 106);
+  opacity: 5px;
+  font-weight: bolder;
+  font-family: "Crete Round", serif;
+}
+
+.count p {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: salmon;
+  font-family: "Crete Round", serif;
+
+}
+@media screen and (max-width: 400px) {
+  #date {
+
+    width: 100%;
+    height: 60vh;
+    background-color: salmon;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "back back";
+    opacity: 2px;
+    
+    
+    
+  }
+  
+  .count {
+   
+    width: 90%;
+    height: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    filter: brightness(99%);
+    border-radius: 15% ;
+    box-sizing: border-box;
+    box-shadow: 2px 5px 5px rgb(61, 60, 59);
+  }
+  .count h1 {
+    text-align: center;
+    font-size: 1.5em;
+    color: rgb(216, 117, 106);
+    opacity: 5px;
+    font-weight: bolder;
+    font-family: "Crete Round", serif;
+    
+    
+  }
+  
+  .count p {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 14px;
+    font-weight: 0;
+    color: salmon;
+    font-family: "Crete Round", serif;
+    
+  }
+}
+
+#akad {
+
+  width: 100%;
+  height: 150vh;
+  background-color: rgb(160, 175, 180);
+  display: grid;
+  grid-template-rows: 2fr 2fr;
+  grid-template-areas: "akad" "akad2";
+  gap: 50px;
+}
+.akadbg {
+  
+  width: 90%;
+  height: 95%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-right-radius: 40%;
+  border-top-left-radius: 40%;
+  box-sizing: border-box;
+  box-shadow: -2px -1px 14px 4px rgba(0,0,0,0.87);
+  -webkit-box-shadow: -2px -1px 14px 4px rgba(0,0,0,0.87);
+  -moz-box-shadow: -2px -1px 14px 4px rgba(0,0,0,0.87);
+}
+.akadbg::before {
+  content: "";
+  background-image: url(img/foto7.jpg);
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  filter: brightness(70%);
+  
+}
+
+.teksakad {
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  justify-content: center;
+  filter: brightness(100%);
+  z-index: 1;
+  margin-top: 20px;
+  
+}
+
+.akad2 {
+    width: 90%;
+    height: 95%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-right-radius: 40%;
+    border-top-left-radius: 40%;
+    box-sizing: border-box;
+    box-shadow: -2px -1px 14px 4px rgba(0,0,0,0.87);
+    -webkit-box-shadow: -2px -1px 14px 4px rgba(0,0,0,0.87);
+    -moz-box-shadow: -2px -1px 14px 4px rgba(0,0,0,0.87);
+  }
+  .akad2::before {
+    content: "";
+    background-image: url(img/foto5.jpg);
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    filter: brightness(70%);
+  
+  }
+  
+ 
+  .teksakad h1 {
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+  .teksakad P {
+    font-size: 0.6em;
+   padding-right: 20px;
+   padding-left: 20px;
+  }
+  .teksakad a {
+    text-decoration: none;
+    background-color: white;
+    color: salmon;
+    font-size: 0.6em;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    text-align: center;
+
+  }
+
+  .teksakad2 {
+    font-size: 3em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    justify-content: center;
+    filter: brightness(100%);
+    z-index: 1;
+    margin-top: 20px;
+    
+  }
+  .teksakad2 h1 {
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+  .teksakad2 P {
+    font-size: 0.6em;
+   padding-right: 20px;
+   padding-left: 20px;
+  }
+  .teksakad2 a {
+    text-decoration: none;
+    background-color: white;
+    color: salmon;
+    font-size: 0.6em;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    text-align: center;
+
+  }
+
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .gallery-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Efek zoom saat hover */
+  .gallery-container img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Lightbox styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 95vh;
+    background: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .lightbox-img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #fff;
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .controls {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .controls button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .controls button:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+  #daftarkomen {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "komen komen";
+    margin: auto;
+    background-color: #f0f0f0;
+  }
+  #komen {
+    padding: 30px;
+  }
+  .komen-container {
+    max-width: 500px;
+    margin: auto;
+  }
+  .komen-container h2 {
+    text-align: center;
+    color: #8A6E58;
+    margin-bottom: 20px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+  }
+ .komen {
+    padding: 10px;
+    background-color: #CDAA7D;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  .komen-item {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 10;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column; 
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    
+  }
+  .komen-item h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+    font-size: 1em;
+  }
+  .komen-item p {
+    margin: 5px 0 0;
+    font-size: 0.95em;
+  }
+  /* kata */
+  #kata-kata {
+    height: 122vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #fff5f7, #fdeff0); /* warna pink lembut */
+    text-align: center;
+    font-family: 'Georgia', serif;
+    color: #444;
+  }
+  
+  .kata-kata-container {
+    max-width: 800px;
+    width: 100%;
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  .kata-kata-container p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-style: italic;
+  }
+  
+  .kata-kata-container h2 {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+  /* rekening */
+
+  .rekening {
+    margin-top: 30px;
+  }
+  
+  .rekening h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .bank-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0;
+    background: #f9f9f9;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  
+  .bank-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  
+  .bank-item p {
+    margin: 0;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  .qris-img img {
+    margin-top: 20px;
+    max-width: 200px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.95rem;
+    z-index: 99;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
