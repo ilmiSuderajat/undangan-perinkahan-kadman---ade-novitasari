@@ -60,9 +60,9 @@ redirectIfDesktop();
 // slide show
 
 const slides = [
-  'img/foto1.jpg',
-  'img/foto2.jpg',
-  'img/foto3.jpg'
+  'img/foto1.JPG',
+  'img/foto2.JPG',
+  'img/foto3.JPG'
 ];
 
 let index = 0;
@@ -90,9 +90,9 @@ setInterval(() => {
 
 // Slideshow untuk #true
 const trueSlides = [
-  'img/foto4.jpg',
-  'img/foto5.jpg',
-  'img/foto6.jpg'
+  'img/foto4.JPG',
+  'img/foto5.JPG',
+  'img/foto6.JPG'
 ];
 
 let currentTrue = 0;
