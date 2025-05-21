@@ -21,7 +21,7 @@ function buka() {
   if (!aktif) {
     document.getElementById('true').scrollIntoView({behavior: 'smooth'});
   }
-
+  audio.loop = true;
   audio.play();
   aktif = true;
 
