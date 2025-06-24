@@ -361,6 +361,39 @@
   });
 </script>
 
+<script>
+  <script>
+  // Fungsi untuk mengecek lebar layar dan melakukan pengalihan
+  function redirectToOtherPageOnLargeScreen() {
+    // window.innerWidth mengembalikan lebar viewport dalam piksel
+    if (window.innerWidth >= 768) {
+      // Mengarahkan browser ke halaman lain
+      window.location.href = 'halaman-lain.html';
+    }
+  }
 
+  // Panggil fungsi saat halaman pertama kali dimuat
+  redirectToOtherPageOnLargeScreen();
+
+  // Tambahkan event listener untuk memanggil fungsi saat ukuran jendela diubah
+  // Ini penting jika pengguna mengubah ukuran browser mereka
+  window.addEventListener('resize', redirectToOtherPageOnLargeScreen);
+
+  // Opsional: Jika kamu ingin memastikan pengalihan hanya terjadi sekali
+  // dan tidak mengganggu pengguna jika mereka mengecilkan layar kembali
+  // kamu bisa menambahkan mekanisme ini:
+  /*
+  let hasRedirected = false;
+  function redirectToOtherPageOnLargeScreenOnce() {
+    if (window.innerWidth >= 7680 && !hasRedirected) {
+      hasRedirected = true; // Set flag to true
+      window.location.href = 'halaman-lain.html';
+    }
+  }
+  window.addEventListener('load', redirectToOtherPageOnLargeScreenOnce);
+  window.addEventListener('resize', redirectToOtherPageOnLargeScreenOnce);
+  */
+</script>
+</script>
 </body>
 </html>
